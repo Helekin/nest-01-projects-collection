@@ -47,5 +47,5 @@ npm install
 ## Development (watch)
 
 ```bash
-npm run dev
+npm run start:dev
 ```
