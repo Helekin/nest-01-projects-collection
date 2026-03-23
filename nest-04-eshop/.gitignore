@@ -1,3 +1,8 @@
+# folders
+
+/static/products/*
+!/static/products/.gitkeep
+
 # compiled output
 /dist
 /node_modules
