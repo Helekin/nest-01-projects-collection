@@ -10,7 +10,7 @@ import * as bcrypt from 'bcrypt';
 
 import { CreateUserDto, LoginUserDto } from './dto';
 import { User } from './entities/user.entity';
-import { JwtPayload } from './interfaces/jwt-payload.interfaces';
+import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
@@ -55,6 +55,13 @@ export class AuthService {
     return {
       id: user.id,
       email: user.email,
+      token: this.getJwtToken({ id: user.id }),
+    };
+  }
+
+  async checkAuthStatus(user: User) {
+    return {
+      ...user,
       token: this.getJwtToken({ id: user.id }),
     };
   }
